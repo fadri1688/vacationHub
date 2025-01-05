@@ -1,0 +1,51 @@
+/* 
+CSS datei 
+*/
+.hero-section {
+    background-image: url('images/travel_background.jpg'); /* Pfad zum Hintergrundbild */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 75vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-section h1 {
+    padding-top: 5%;
+    font-weight: bold;
+  }
+
+  .home-text{
+    color: rgb(42, 40, 40);
+  }
+ 
+  #card-box{
+    margin-bottom: 30px;
+  }
+  .scroll-container {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  
+  .scroll-container img {
+    padding: 10px;
+  }
+
+  #deletBtn{
+    margin-top: -20px;
+    margin-left: -11px;
+  }
+  
+  #spacing{
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+#buttonGray{
+  background-color: #333;
+  color: white;
+}
