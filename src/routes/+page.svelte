@@ -2,7 +2,6 @@
   // Hier kannst du logische Variablen oder Funktionen hinzufügen
   import WishlistComponent from "$lib/WishlistComponent.svelte";
   let { data } = $props();
-  console.log("________________: ", data);
 </script>
 
 <div class="hero-section">

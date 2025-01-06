@@ -17,9 +17,6 @@
           <li class="nav-item">
             <a class="nav-link" href="/add">Reise hinzufügen</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">Contact</a>
-          </li>
         </ul>
       </div>
     </div>
