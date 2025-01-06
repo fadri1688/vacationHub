@@ -67,7 +67,7 @@
         id="day"
         name="day"
         bind:value={day}
-        placeholder="Geben Sie den Tag der Reise ein"
+        placeholder="Geben Sie die anzahl Tag der Reise ein"
         required
       />
     </div>
@@ -81,7 +81,7 @@
         name="description"
         bind:value={description}
         rows="3"
-        placeholder="Geben Sie die Beschreibung ein"
+        placeholder="Geben Sie die Kurzbeschreibung ein"
         required
       ></textarea>
     </div>
@@ -95,7 +95,7 @@
         name="acc"
         bind:value={acc}
         rows="3"
-        placeholder="Geben Sie die alle mit reisende komma getrennt ein"
+        placeholder="Geben Sie alle Personen komma getrennt ein"
         required
       ></textarea>
     </div>
@@ -109,7 +109,7 @@
         name="coun"
         rows="3"
         bind:value={coun}
-        placeholder="Geben Sie die alle mit reisende komma getrennt ein"
+        placeholder="Geben Sie alle Länder komma getrennt ein"
         required
       ></textarea>
     </div>
@@ -123,7 +123,7 @@
         name="cit"
         bind:value={cit}
         rows="3"
-        placeholder="Geben Sie die alle mit reisende komma getrennt ein"
+        placeholder="Geben Sie alle mit Städte komma getrennt ein"
         required
       ></textarea>
     </div>

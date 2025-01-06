@@ -70,15 +70,7 @@ async function getTripStorys(id) {
   }
   return trips;
 }
-// create movie
-// Example movie object:
-/* 
-{ 
-  title: "Das Geheimnis von Altura",
-  year: 2024,
-  length: "120 Minuten"
-} 
-*/
+
 async function createTrip(trip) {
   try {
     const collection = db.collection("Trips");
@@ -103,48 +95,8 @@ async function createEntrie(entrie) {
   return null;
 }
 
-// update movie
-// Example movie object:
-/* 
-{ 
-  _id: "6630e72c95e12055f661ff13",
-  title: "Das Geheimnis von Altura",
-  year: 2024,
-  length: "120 Minuten",
-  actors: [
-    "Lena Herzog",
-    "Maximilian Schröder",
-    "Sophia Neumann"
-  ],
-  poster: "/images/Altura.png",
-  watchlist: false
-} 
-*/
-// returns: id of the updated movie or null, if movie could not be updated
-async function updateMovie(movie) {
-  try {
-    let id = movie._id;
-    delete movie._id; // delete the _id from the object, because the _id cannot be updated
-    const collection = db.collection("movies");
-    const query = { _id: new ObjectId(id) }; // filter by id
-    const result = await collection.updateOne(query, { $set: movie });
-
-    if (result.matchedCount === 0) {
-      console.log("No movie with id " + id);
-      // TODO: errorhandling
-    } else {
-      console.log("Movie with id " + id + " has been updated.");
-      return id;
-    }
-  } catch (error) {
-    // TODO: errorhandling
-    console.log(error.message);
-  }
-  return null;
-}
-
-// delete movie by id
-// returns: id of the deleted movie or null, if movie could not be deleted
+// delete trip by id
+// returns: id of the deleted trip or null, if trip could not be deleted
 async function deleteTrip(id) {
   try {
     const collection = db.collection("Trips");
