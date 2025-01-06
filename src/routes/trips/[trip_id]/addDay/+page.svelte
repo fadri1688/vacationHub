@@ -1,26 +1,50 @@
 <script>
-  import TripsPage from "../+page.svelte"; 
-  export let rID;
+  export let data;
+  console.log("________________: ", data.tripId);
+  let day = "";
+  let description = "";
+  let selectedFile;
+
+  const handleUpload = async () => {
+    if (!selectedFile) {
+      alert("Bitte wählen Sie eine Datei aus.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("type", "day"); // Typ für die API
+    formData.append("day", day);
+    formData.append("reiseId", data.tripId);
+    formData.append("description", description);
+    formData.append("image", selectedFile);
+
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      alert("Bild erfolgreich hochgeladen!");
+    } else {
+      alert("Fehler beim Hochladen.");
+    }
+  };
 </script>
 
 <div class="container my-5">
-  <h1>Deine Tag hinzufügen</h1>
-  <p>Bitte füge deine Tag hinzu</p>
+  <h1>Tag hinzufügen</h1>
+  <p>Bitte füge dein Tag hinzu</p>
 
   <div class="container mt-5">
-    <h1 class="text-center mb-4">Tag hinzufügen</h1>
-
-    <form>
+    <form on:submit|preventDefault={handleUpload}>
       <!-- ReiseID -->
       <input
         type="hidden"
         class="form-control"
         id="reiseId"
         name="reiseId"
-        value=""
+        bind:value={data.tripId}
       />
-      <p>{rID}</p>
-
       <!-- Tag -->
       <div class="mb-3">
         <label for="day" class="form-label">Tag</label>
@@ -30,6 +54,7 @@
           id="day"
           name="day"
           placeholder="Geben Sie den Tag der Reise ein"
+          bind:value={day}
           required
         />
       </div>
@@ -42,7 +67,8 @@
           id="description"
           name="description"
           rows="5"
-          placeholder="Geben Sie die Beschreibung ein"
+          placeholder="Tagebuch Eintrag"
+          bind:value={description}
           required
         ></textarea>
       </div>
@@ -52,15 +78,10 @@
         <label for="images" class="form-label">Bilder hochladen</label>
         <input
           type="file"
+          id="image"
+          on:change={(e) => (selectedFile = e.target.files[0])}
           class="form-control"
-          id="images"
-          name="images"
-          multiple
-          accept="image/*"
         />
-        <small class="form-text text-muted"
-          >Sie können mehrere Bilder auswählen.</small
-        >
       </div>
 
       <!-- Submit Button -->

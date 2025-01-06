@@ -11,6 +11,7 @@
     }
 
     const formData = new FormData();
+    formData.append("type", "wish"); // Typ für die API
     formData.append("name", name);
     formData.append("countries", countries);
     formData.append("shortDesc", shortDesc);

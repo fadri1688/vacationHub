@@ -91,6 +91,18 @@ async function createTrip(trip) {
   return null;
 }
 
+async function createEntrie(entrie) {
+  try {
+    const collection = db.collection("Entries");
+    const result = await collection.insertOne(entrie);
+    return result.insertedId.toString(); // convert ObjectId to String
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
 // update movie
 // Example movie object:
 /* 
@@ -193,7 +205,7 @@ export default {
   getTrip,
   getTripStorys,
   createTrip,
-  //updateMovie,
+  createEntrie,
   deleteTrip,
   getWishes,
   addWish,

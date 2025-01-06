@@ -10,7 +10,7 @@
       <div class="card">
         <img
           id="bild"
-          src="/images/{trip.TitleImage}"
+          src="/uploads/{trip.TitleImage}"
           class="card-img-top"
           alt={trip.Title}
         />

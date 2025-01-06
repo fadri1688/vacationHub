@@ -10,7 +10,7 @@
   <div class="scroll-container">
     {#each trip.Images as image}
     <img
-      src="/images/{image}"
+      src="/uploads/{image}"
       alt="{image}"
       width="300"
       height="400"
