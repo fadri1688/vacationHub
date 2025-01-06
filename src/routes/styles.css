@@ -49,3 +49,33 @@ CSS datei
   background-color: #333;
   color: white;
 }
+
+.messages {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.message-user {
+  text-align: center;
+  background-color: #bad7f4;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.message-assistant {
+  text-align: center;
+  background-color: #c7ead0;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input-group {
+  margin-top: 10px;
+}
+

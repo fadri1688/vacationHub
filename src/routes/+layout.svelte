@@ -17,6 +17,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/add">Reise hinzufügen</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/chat">Chatbot</a>
+          </li>
         </ul>
       </div>
     </div>
