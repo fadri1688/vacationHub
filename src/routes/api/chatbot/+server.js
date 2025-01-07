@@ -11,7 +11,7 @@ export const POST = async ({ request }) => {
             'Authorization': `Bearer ${OPENAI_API_KEY}`
         },
         body: JSON.stringify({
-            model: 'gpt-4', // Oder 'gpt-3.5-turbo'
+            model: 'gpt-4', 
             messages: [
                 { role: 'system', content: 'You are a travel assistant. Always suggest specific travel destinations based on user input, including temperature, location type (e.g., beach, city), and other preferences.' },
                 { role: 'user', content: prompt }
